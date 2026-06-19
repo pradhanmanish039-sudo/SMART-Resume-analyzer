@@ -1,7 +1,6 @@
 import io
 import re
 import pdfplumber
-import pytesseract
 from PIL import Image
 
 
@@ -21,9 +20,7 @@ def extract_text_from_docx(file_bytes):
 
 
 def extract_text_from_image(file_bytes):
-    image = Image.open(io.BytesIO(file_bytes))
-    text = pytesseract.image_to_string(image)
-    return text
+    return "Image text extraction not supported."
 
 
 def extract_text(uploaded_file):
