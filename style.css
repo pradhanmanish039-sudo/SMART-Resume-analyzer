@@ -1,0 +1,328 @@
+/* ─── Root & Base ─────────────────────────────────────────── */
+:root {
+  --navy:       #1a2744;
+  --navy-light: #2a3f66;
+  --green:      #2d6a4f;
+  --green-light:#40916c;
+  --cream:      #FFF8E7;
+  --white:      #ffffff;
+  --gray-50:    #f8f9fa;
+  --gray-100:   #f1f3f5;
+  --gray-200:   #e9ecef;
+  --gray-300:   #dee2e6;
+  --gray-500:   #adb5bd;
+  --gray-700:   #495057;
+  --gray-900:   #212529;
+  --radius:     14px;
+  --shadow:     0 2px 12px rgba(0,0,0,0.06);
+  --shadow-lg:  0 8px 30px rgba(0,0,0,0.10);
+  --font:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--gray-900);
+}
+
+#root > .main > .block-container {
+  max-width: 1280px;
+  padding: 1.5rem 2rem 5rem;
+}
+
+/* ─── Branding ────────────────────────────────────────────── */
+.brand-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.brand-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+}
+
+.brand-header .tagline {
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+/* ─── Card Grid (Pinterest-inspired masonry) ─────────────── */
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+}
+
+.card-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--gray-700);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 1rem;
+}
+
+.required {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.optional {
+  color: var(--gray-500);
+  font-weight: 400;
+  text-transform: none;
+  font-size: 0.8rem;
+}
+
+/* ─── Upload Area ─────────────────────────────────────────── */
+.upload-zone {
+  border: 2px dashed var(--gray-300);
+  border-radius: 10px;
+  padding: 1.75rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  background: var(--gray-50);
+  margin-bottom: 0.75rem;
+}
+
+.upload-zone:hover {
+  border-color: var(--navy-light);
+  background: #f0f2f8;
+}
+
+.upload-zone .icon {
+  font-size: 1.8rem;
+  margin-bottom: 0.3rem;
+}
+
+.upload-zone p {
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.formats-hint {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  margin-top: 0.3rem;
+  text-align: center;
+}
+
+/* ─── Buttons ─────────────────────────────────────────────── */
+.stButton > button {
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  padding: 0.55rem 1.5rem !important;
+  transition: all 0.2s !important;
+}
+
+.stButton > button[kind="primary"] {
+  background: var(--navy) !important;
+  color: white !important;
+  border: none !important;
+}
+
+.stButton > button[kind="primary"]:hover {
+  background: var(--navy-light) !important;
+  box-shadow: 0 4px 14px rgba(26,39,68,0.25) !important;
+}
+
+/* ─── Metric Cards ────────────────────────────────────────── */
+.metric-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.metric-card .metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.metric-card .metric-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  margin-top: 0.2rem;
+}
+
+.metric-primary {
+  border-top: 4px solid var(--navy);
+}
+
+.metric-green {
+  border-top: 4px solid var(--green);
+}
+
+.metric-amber {
+  border-top: 4px solid #d97706;
+}
+
+/* ─── Result Sections ─────────────────────────────────────── */
+.result-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.result-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.keyword-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.keyword-tag {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.keyword-tag.match {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.keyword-tag.missing {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.tip-box {
+  background: #eff6ff;
+  border-left: 4px solid #3b82f6;
+  padding: 1rem 1.25rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 0.9rem;
+  color: #1e3a5f;
+  margin-top: 1rem;
+}
+
+.tip-box strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* ─── Floating "See Job Options" Button ───────────────────── */
+.floating-btn-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 9999;
+}
+
+.floating-btn-container .stButton > button {
+  background: var(--navy) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 0.7rem 1.8rem !important;
+  font-weight: 600 !important;
+  font-size: 0.9rem !important;
+  box-shadow: 0 6px 20px rgba(26,39,68,0.3) !important;
+  transition: all 0.2s !important;
+}
+
+.floating-btn-container .stButton > button:hover {
+  background: var(--navy-light) !important;
+  box-shadow: 0 8px 28px rgba(26,39,68,0.4) !important;
+  transform: translateY(-2px);
+}
+
+/* ─── Job Options Section ─────────────────────────────────── */
+.jobs-section .stButton > button {
+  background: transparent !important;
+  border: none !important;
+  font-size: 1.3rem !important;
+  color: #888 !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  min-width: unset !important;
+}
+
+.jobs-section .stButton > button:hover {
+  color: #333 !important;
+}
+
+/* ─── Communication Breakdown ─────────────────────────────── */
+.comm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.comm-item {
+  text-align: center;
+  padding: 0.6rem;
+  border-radius: 8px;
+  background: var(--gray-50);
+}
+
+.comm-item .comm-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.comm-item .comm-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gray-500);
+}
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .metric-grid { grid-template-columns: 1fr 1fr; }
+  .comm-grid { grid-template-columns: 1fr 1fr; }
+  .floating-btn-container { bottom: 1rem; right: 1rem; }
+  .modal-content { width: 95%; padding: 1.5rem; }
+}
+
+@media (max-width: 480px) {
+  .metric-grid { grid-template-columns: 1fr; }
+}
